@@ -1,0 +1,1 @@
+In this project, i intend to practice some new things learned in course of Michelli Brito from youtube like using springboot app with a graphical interface, list data from a SGDB, use html with thymeleaf and materialize css
