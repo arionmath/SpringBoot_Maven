@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -24,5 +25,7 @@ public class MemberModel {
 	private String name;
 	private String phone;
 	
+	@ManyToOne
+	private GroupModel group;
 
 }
