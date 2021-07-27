@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<head>
+<meta charset="ISO-8859-1">
+<title>Groups</title>
+</head>
+
+<body>
+<a href="index">index</a>
+<div th:each = "group : ${atribute}">
+	<p th:text = "${group.name}">
+	<p th:text = "${group.linkDiscord}">
+</div>
+
+
+</body>
+</html>

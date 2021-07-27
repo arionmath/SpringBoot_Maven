@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.grupoestudo.models.GroupModel;
 import com.grupoestudo.repositories.GroupRepositorie;
+
+import ch.qos.logback.core.net.SyslogOutputStream;
 @Service
 public class GroupService {
 	
@@ -15,6 +17,7 @@ public class GroupService {
 	
 	public void saveGroup(GroupModel group) {
 		GP.save(group);		
+		System.out.println("SERVICE SAVEGROUP");
 	}
 	
 	public List<GroupModel> listGroup() {
