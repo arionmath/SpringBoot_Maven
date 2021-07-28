@@ -13,9 +13,12 @@ public class GroupService {
 	@Autowired
 	GroupRepositorie GP;
 	
-	public void saveGroup(GroupModel group) {
+	public String saveGroup(GroupModel group) {
+		if ( group.getLinkDiscord().isEmpty() || group.getName().isEmpty()) {
+			return "Check fields!";
+		}
 		GP.save(group);		
-		System.out.println("SERVICE SAVEGROUP");
+		return "Group save successful";
 	}
 	
 	public List<GroupModel> listGroup() {

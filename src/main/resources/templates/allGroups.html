@@ -1,18 +1,37 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org"
-	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 <head>
 <meta charset="ISO-8859-1">
 <title>Groups</title>
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="css/materialize.css"
+	media="screen,projection" />
+
+<link type="text/css" rel="stylesheet" href="css/customcss.css"/>
+
 </head>
 
 <body>
-<a href="index">index</a>
-<div th:each = "group : ${atribute}">
-	<p th:text = "${group.name}">
-	<p th:text = "${group.linkDiscord}">
-</div>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Logo</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">JavaScript</a></li>
+      </ul>
+    </div>
+  </nav>
+	<a href="index">index</a>
+	<div th:each="group : ${atribute}">
+		<p th:text="${group.name}">
+		<p th:text="${group.linkDiscord}">
+	</div>
 
 
 </body>

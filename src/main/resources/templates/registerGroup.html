@@ -4,9 +4,18 @@
 <head>
 <meta charset="UTF-8">
 <title>Group</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="css/materialize.css"
+	media="screen,projection" />
+
+<link type="text/css" rel="stylesheet" href="css/customcss.css"/>
+
 </head>
 <body>
 
+<div class = container>
 	<h2>Register your group!</h2>
 
 	<form method="post">
@@ -17,6 +26,11 @@
 		<button class="waves-effect waves-light btn" type="submit">Save</button>
 
 	</form>
-
+	
+	
+	<div class="alert" role="alert">
+	<span th:text="${result}"></span>
+	</div>
+</div>
 </body>
 </html>

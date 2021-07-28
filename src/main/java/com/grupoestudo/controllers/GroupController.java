@@ -33,11 +33,16 @@ public class GroupController {
 	}
 
 	@PostMapping(value = "/index")
-	public String saveGroup(GroupModel group) {
+	public ModelAndView saveGroup(GroupModel group) {
 
-		GS.saveGroup(group);
+	String result = GS.saveGroup(group);
+	
+	ModelAndView mav = new ModelAndView("registerGroup");
+	
+	mav.addObject("result",result);
 
-		return  "registerGroup";
+	//	return  "registerGroup";
+	return  mav;
 	}
 	
 	@RequestMapping(value = "/index")
