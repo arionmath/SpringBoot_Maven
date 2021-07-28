@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -22,7 +23,7 @@ public class GroupController {
 //	public List<GroupModel> listAll() {
 //		return GS.listGroup();
 //	}
-	@GetMapping(value = "/group")
+	@GetMapping(value = "/groups")
 	public ModelAndView listAll() {
 		String page = "allGroups";
 		List<GroupModel> listGroup = GS.listGroup();	
@@ -42,5 +43,12 @@ public class GroupController {
 	@RequestMapping(value = "/index")
 	public String toIndex() {
 		return"registerGroup";
+	}
+	
+	@GetMapping(value = "/group/{id}")
+	public ModelAndView showOne(@PathVariable Long id) {
+		ModelAndView mav = new ModelAndView("OneGroup");
+		mav.addObject("group", GS.getOneById(id));
+		return mav;
 	}
 }

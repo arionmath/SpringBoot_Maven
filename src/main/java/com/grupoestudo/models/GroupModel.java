@@ -26,7 +26,8 @@ public class GroupModel {
 	private Long id;
 	private String name;
 	private String linkDiscord;
-	@OneToMany
+	
+	@OneToMany(mappedBy = "group")
 	private List<MemberModel> members;
 
 }

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="ISO-8859-1">
+<title>Group desc</title>
+</head>
+<body>
+
+	<div>
+		<h2>Details from group</h2>
+
+		<div class="row">
+			<p>
+				Name: <span th:text="${group.name}"></span>
+			</p>
+			<p>
+				Link: <span th:text="${group.linkDiscord}"></span>
+			</p>
+			<p>
+				Members: 
+				<div th:each ="v:${group.members}">
+					<span th:text =${v.name}></span>
+				</div>
+			
+		</div>
+
+	</div>
+
+	
+		<h3>Add new member to this group!</h3>
+		
+		<form method="post">
+			Member's name: <input type="text" value="" name="name" /> 
+			phone: <input type="text" value="" name="linkDiscord" />
+
+			<button class="waves-effect waves-light btn" type="submit">Save</button>
+			
+		</form>
+	
+
+</body>
+</html>

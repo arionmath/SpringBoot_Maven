@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
@@ -26,6 +27,7 @@ public class MemberModel {
 	private String phone;
 	
 	@ManyToOne
+	@JoinColumn(name = "group_model_id")
 	private GroupModel group;
 
 }
