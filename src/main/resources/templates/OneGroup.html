@@ -2,7 +2,7 @@
 <html xmlns:th="http://thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Group desc</title>
 </head>
 <body>
@@ -32,12 +32,12 @@
 		
 		<form method="post">
 			Member's name: <input type="text" value="" name="name" /> 
-			phone: <input type="text" value="" name="linkDiscord" />
+			phone: <input type="text" value="" name="phone" />
 
 			<button class="waves-effect waves-light btn" type="submit">Save</button>
 			
 		</form>
-	
+	<div th:text="${result}"></div>
 
 </body>
 </html>

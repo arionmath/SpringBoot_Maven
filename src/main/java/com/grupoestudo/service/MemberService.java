@@ -16,9 +16,14 @@ public class MemberService {
 	public List<MemberModel> findAll() {
 		return MR.findAll();
 	}
-	public void save(Long idGroup, MemberModel member) {
+	public String save(Long idGroup, MemberModel member) {
+		if(member.getName().isEmpty()||member.getPhone().isEmpty()) {
+			return "Check fields!";
+		}
+		
 		member.setGroup(  new GroupModel(idGroup,null,null,null)  );
 		MR.save(member);
+		return "Member save successful";
 		
 	}
 

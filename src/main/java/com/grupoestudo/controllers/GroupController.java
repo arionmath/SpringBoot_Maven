@@ -56,4 +56,11 @@ public class GroupController {
 		mav.addObject("group", GS.getOneById(id));
 		return mav;
 	}
+/*
+	@GetMapping(value = "/group/{id}")
+	public ModelAndView showOne(@PathVariable Long id) {
+		ModelAndView mav = new ModelAndView("OneGroup");
+		mav.addObject("group", GS.getOneById(id));
+		return mav;
+	}*/
 }

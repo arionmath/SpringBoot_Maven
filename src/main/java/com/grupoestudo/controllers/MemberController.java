@@ -9,13 +9,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.grupoestudo.models.GroupModel;
 import com.grupoestudo.models.MemberModel;
+import com.grupoestudo.service.GroupService;
 import com.grupoestudo.service.MemberService;
 
 @Controller
 public class MemberController {
 	@Autowired
 	MemberService MS;
+	@Autowired
+	GroupService GS;
 	
 	@GetMapping(value = "/members")
 	public List<MemberModel> listAll() {
@@ -23,10 +27,17 @@ public class MemberController {
 	}
 	
 	@PostMapping(value="/group/{idGroup}")
-	public String saveMember(@PathVariable Long idGroup, MemberModel member) {
-		MS.save(idGroup,member);
-//		ModelAndView mav = new ModelAndView("OneGroup");
-//		mav.getView()
-		return "redirect:"+idGroup;
+	public ModelAndView saveMember(@PathVariable Long idGroup, MemberModel member) {
+
+		String result = MS.save(idGroup,member);
+		
+		GroupModel currentGroup = GS.getOneById(idGroup);
+		
+				
+		ModelAndView mav = new ModelAndView("OneGroup");
+		mav.addObject("result", result);
+		mav.addObject("group",currentGroup);
+		
+		return mav;
 	}
 }
