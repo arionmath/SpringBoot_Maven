@@ -26,7 +26,7 @@ public class MemberController {
 		return MS.findAll();
 	}
 	
-	@PostMapping(value="/group/{idGroup}")
+	@PostMapping(value="/group-{idGroup}")
 	public ModelAndView saveMember(@PathVariable Long idGroup, MemberModel member) {
 
 		
