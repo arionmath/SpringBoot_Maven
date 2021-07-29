@@ -35,4 +35,16 @@ public class GroupService {
 		
 	}
 
+	public void block(Long id) {
+		GroupModel current = GP.getById(id);
+		current.setBlock(true);
+		GP.save(current);
+		
+	}
+	public void unblock(Long id) {
+		GroupModel current = GP.getById(id);
+		current.setBlock(false);
+		GP.save(current);
+		
+	}
 }
