@@ -8,13 +8,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@AllArgsConstructor
+
 @NoArgsConstructor
 @Getter
 @Setter
@@ -26,7 +25,17 @@ public class GroupModel {
 	private Long id;
 	private String name;
 	private String linkDiscord;
+	private Boolean block;
 	
+	public GroupModel(Long id, String name, String linkDiscord, Boolean block, List<MemberModel> members) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.linkDiscord = linkDiscord;
+		this.block = false;
+		this.members = members;
+	}
+
 	@OneToMany(mappedBy = "group")
 	private List<MemberModel> members;
 

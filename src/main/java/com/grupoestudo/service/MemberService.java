@@ -21,7 +21,7 @@ public class MemberService {
 			return "Check fields!";
 		}
 		
-		member.setGroup(  new GroupModel(idGroup,null,null,null)  );
+		member.setGroup(  new GroupModel(idGroup,null,null,null,null)  );
 		MR.save(member);
 		return "Member save successful";
 		
