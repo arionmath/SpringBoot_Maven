@@ -29,12 +29,16 @@ public class MemberController {
 	@PostMapping(value="/group/{idGroup}")
 	public ModelAndView saveMember(@PathVariable Long idGroup, MemberModel member) {
 
-		String result = MS.save(idGroup,member);
+		
 		
 		GroupModel currentGroup = GS.getOneById(idGroup);
-		
-				
 		ModelAndView mav = new ModelAndView("OneGroup");
+		String result;
+		if (currentGroup.getBlock()) {
+			result = "This group is blocked. You can't add members!";
+		}else {
+			result = MS.save(idGroup,member);
+		}
 		mav.addObject("result", result);
 		mav.addObject("group",currentGroup);
 		
