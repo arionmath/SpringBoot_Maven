@@ -10,11 +10,10 @@ import javax.persistence.OneToMany;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
-@NoArgsConstructor
+
 @Getter
 @Setter
 @EqualsAndHashCode
@@ -36,6 +35,10 @@ public class GroupModel {
 		this.members = members;
 	}
 
+	public GroupModel() {
+		this.block = false;
+	}
+	
 	@OneToMany(mappedBy = "group")
 	private List<MemberModel> members;
 
