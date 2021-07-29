@@ -29,8 +29,11 @@
   </nav>
 	<a href="index">index</a>
 	<div th:each="group : ${atribute}">
+	
 		<p th:text="${group.name}">
 		<p th:text="${group.linkDiscord}">
+		<p><a th:href="@{/deleteGroup/{id} (id = ${group.id}) }">Delete</a>
+				
 	</div>
 
 

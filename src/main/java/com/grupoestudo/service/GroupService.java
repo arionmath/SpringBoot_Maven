@@ -30,4 +30,9 @@ public class GroupService {
 		
 	}
 
+	public void delete(Long id) {
+		GP.deleteById(id);
+		
+	}
+
 }
