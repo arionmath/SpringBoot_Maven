@@ -32,10 +32,17 @@
 	
 		<p th:text="${group.name}">
 		<p th:text="${group.linkDiscord}">
+		
+		<div th:if="${group.block}">
+  		<p>Group blocked</p>
+		</div>
+		<div th:unless="${group.block}">
+  		<p>Group active!</p>
+		</div>
+		
 		<p><a th:href="@{/deleteGroup/{id} (id = ${group.id}) }">Delete</a>
 				
 	</div>
-
 
 </body>
 </html>
