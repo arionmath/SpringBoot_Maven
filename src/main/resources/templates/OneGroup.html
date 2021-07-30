@@ -18,7 +18,7 @@
 <body>
 <div th:include="components/header"> </div>
 
-	<div>
+	<div class = "container">
 		<h2>Details from group</h2>
 
 		<div class="row">
@@ -30,15 +30,15 @@
 			</p>
 			<p>
 				Members: 
-				<div th:each ="v:${group.members}">
-					<span th:text =${v.name}></span>
-				</div>
-			
-		</div>
-
+				<ul class="collection" th:each ="v:${group.members}">
+				
+					<li class="collection-item avatar">
+						<span  class="title" th:text =${v.name}></span>
+						<p th:text="${v.phone}">
+		
+    				</li>
+ 				</ul>
 	</div>
-
-	
 		<h3>Add new member to this group!</h3>
 		
 		<form method="post">
@@ -49,6 +49,6 @@
 			
 		</form>
 	<div th:text="${result}"></div>
-
+</div>
 </body>
 </html>

@@ -17,12 +17,16 @@
 </head>
 <body>
 <div th:include="components/header"> </div>
-	<a href="index">index</a>
+	<div class = "container">
+	<ul class="collection">
 	<div th:each="group : ${atribute}">
 	
-		<a th:href="@{/group-{id} (id = ${group.id}) }" th:text="${group.name}"></a>
-		<p th:text="${group.linkDiscord}">
-		
+		<li class="collection-item">
+			<div><a class = "collection-item" th:href="@{/group-{id} (id = ${group.id}) }" th:text="${group.name}">
+				</a>
+				
+				<span th:text="${group.linkDiscord}"></span>
+
 		<div th:if="${group.block}">
   		<p>Group blocked!</p>
   		<p><a th:href="@{/unblockGroup/{id} (id = ${group.id}) }">Unblock</a>
@@ -30,8 +34,13 @@
 		<div th:unless="${group.block}">
   		<p>Group active!</p>
   		<p><a th:href="@{/blockGroup/{id} (id = ${group.id}) }">Block</a>
+  		
 		</div>
-		
+		</div>
+		</li>
+		<p>
+	</div>
+	</ul>
 	</div>
 
 </body>
