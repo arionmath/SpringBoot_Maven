@@ -14,7 +14,7 @@
 	<name>GerenciaGrupoEstudos</name>
 	<description>Projeto para gerenciar grupos de estudos em uma instituição</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>8</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
