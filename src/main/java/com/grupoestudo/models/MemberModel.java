@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotBlank;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -23,7 +24,9 @@ public class MemberModel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	@NotBlank(message = "Type your name!")
 	private String name;
+	@NotBlank(message = "Type your phone!")
 	private String phone;
 	
 	@ManyToOne

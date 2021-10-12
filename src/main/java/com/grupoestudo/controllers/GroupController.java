@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.grupoestudo.models.GroupModel;
+import com.grupoestudo.models.MemberModel;
 import com.grupoestudo.service.GroupService;
 
 /**
@@ -74,6 +75,7 @@ public class GroupController {
 	public ModelAndView showOne(@PathVariable Long id) {
 		ModelAndView mav = new ModelAndView("OneGroup");
 		mav.addObject("group", GS.getOneById(id));
+		mav.addObject("currentMember", new MemberModel(null,"","",null));
 		return mav;
 	}
 

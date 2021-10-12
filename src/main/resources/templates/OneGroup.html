@@ -42,13 +42,16 @@
 		<h3>Add new member to this group!</h3>
 		
 		<form method="post">
-			Member's name: <input type="text" value="" name="name" /> 
-			phone: <input type="text" value="" name="phone" />
+			Member's name: <input type="text" th:value="${currentMember.name}" name="name" /> 
+			phone: <input type="text" th:value= "${currentMember.phone }" name="phone" />
 
 			<button class="waves-effect waves-light btn" type="submit">Save</button>
 			
 		</form>
 	<div th:text="${result}"></div>
+	<div th:each = "warning:${warning}">
+	<p th:text="${warning}">
+	</div>
 </div>
 </body>
 </html>
